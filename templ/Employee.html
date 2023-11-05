@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--on 25th oct-->
+<form  method="post" action="{%url 'employee' %}">
+     {% csrf_token %}
+    <table align="center" border="1" cellpadding="5" cellspacing="5">
+        <tr>
+            <td colspan="2" align="center">Employee Details</td>
+        </tr>
+
+         <tr>
+            <td>Name</td>
+             <td><input type="text" name="empname" placeholder="EmployeeName"></td>
+        </tr>
+
+        <tr>
+            <td>Designation</td>
+             <td><input type="text" name="empdesignation" placeholder="EmployeeDesignation"></td>
+        </tr>
+
+        <tr>
+            <td>Salary</td>
+             <td><input type="text" name="empsalary" placeholder="EmployeeSalary"></td>
+        </tr>
+
+        <tr>
+
+             <td colspan="2" align="center"><input type="submit" name="btn" value="Add"></td>
+        </tr>
+    </table>
+
+
+</form>
+
+</body>
+</html>

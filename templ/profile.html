@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form enctype="multipart/form-data"   method="post">
+     {% csrf_token %}
+    <h2 align="center">Profile</h2>
+
+    <table align="center" border="1" cellpadding="5" cellspacing="5">
+
+         <tr>
+            <td>Name</td>
+             <td><input type="text" name="name" value="{{user.name}}" ></td>
+        </tr>
+
+        <tr>
+            <td>DOB</td>
+             <td><input type="date" name="dob" value="{{user.dob}}"></td>
+
+        </tr>
+
+        <tr>
+            <td>Email</td>
+             <td><input type="text" name="email" value="{{user.email}}"></td>
+        </tr>
+
+         <tr>
+            <td>Username</td>
+             <td><input type="text" name="uname" value="{{uname}}"></td>
+        </tr>
+
+        <tr>
+            <td>Course</td>
+
+             <td>
+                 <select name="course" >
+                     {% for course in courses%}
+
+                     {%if user.course.id is course.id %}
+
+                     <option value="{{course.id}}"  selected>{{course.course_name}}</option>
+                     {% else %}
+                     <option value="{{course.id}}" >{{course.course_name}}</option>
+
+                     {%endif%}
+
+                     {%endfor%}
+                 </select>
+             </td>
+        </tr>
+
+
+         <tr>
+            <td>Profile Pic</td>
+             <td><img src="{{propic}}" height="100" width="100"> </td>
+        </tr>
+        <tr>
+            <td>Profile Pic</td>
+             <td><input type="file" name="pp"
+
+             ></td>
+        </tr>
+        <tr>
+
+             <td colspan="2" align="center"><input type="submit" name="btn" value="Update"></td>
+
+
+        </tr>
+    </table>
+    <h1>{{propic}}</h1>
+</form>
+</body>
+</html>
